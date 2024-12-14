@@ -1,0 +1,119 @@
+{    "layer": "top",
+    "height": 30,
+    "margin": 0,
+    "spacing": 10,
+    "modules-left": [
+        "image#apple",
+        "hyprland/window",
+        "custom/File",
+        "custom/Edit",
+        "custom/View",
+        "custom/Window",
+        "custom/Help"
+    ],
+    "modules-right": [
+        "image#vpn",
+        "image#keylight",
+	"image#bluetoth",
+        "image#volume",
+        "battery",
+        "image#battery",
+        "image#wifi",
+        "image#siri",
+        "custom/date",
+        "clock"
+    ],
+
+
+    "image#apple": {
+    "exec": "/home/$USER/.config/macos/scripts/apple.sh",
+    "size": 18,
+    "interval": 2,
+	"on-click": "/home/$USER/dropdown/dropdown --apple"
+    },
+    "hyprland/window": {
+        "format": "{class}",
+        "max-length": 20,
+        "rewrite": {
+            "^(?!.*\\S).*": "Desktop"
+        }
+    },
+    "custom/File": {
+    "format": "File",
+	"on-click": "thunar"
+    },
+    "custom/Edit": {
+        "format": "Edit",
+        "on-click": "kate"
+    },
+    "custom/View": {
+        "format": "View",
+        "on-click": "gimp"
+        },
+    "custom/Window": {
+        "format": "Window",
+        "on-click": "xfce4-appfinder"
+        },
+    "custom/Help": {
+        "format": "Help",
+        "on-click": "eos-welcome --once"
+        },
+    "image#vpn": {
+    "exec": "/home/$USER/.config/macos/scripts/vpn.sh",
+    "size": 18,
+    "interval": 1,
+    "on-click": "mullvad-vpn"
+    },
+    "image#keylight": {
+    "exec": "/home/$USER/.config/macos/scripts/keylight.sh",
+    "on-click": "brightness=$(brightnessctl -d platform::kbd_backlight g); brightness=$(( (brightness + 1) % 3 )); brightnessctl -d platform::kbd_backlight s $brightness",
+    "size":18,
+    "interval": 1
+    },
+    "image#volume": {
+    "exec": "/home/$USER/.config/macos/scripts/volume.sh",
+    "size": 18,
+    "interval": 1,
+    "on-click": "pavucontrol -t 1"
+    },
+    "image#bluetoth": {
+    "exec": "/home/$USER/.config/macos/scripts/bluetooth.sh",
+    "size": 18,
+    "interval": 1,
+    "on-click": "blueman-manager"
+    },
+    "battery": {
+    "bat": "BAT1",
+    "interval": 1,
+    "format": "{capacity}%"
+},
+    "image#battery": {
+    "exec": "/home/$USER/.config/macos/scripts/battery.sh",
+    "size": 28,
+    "interval": 2
+    },
+    "image#wifi": {
+        "exec": "/home/$USER/.config/macos/scripts/wifi.sh",
+        "size": 18,
+        "interval": 2,
+	"on-click": "nm-connection-editor"
+    },
+    "image#siri": {
+    	"exec": "/home/$USER/.config/macos/scripts/siri.sh",
+	"size": 20,
+	"interval": 2,
+	"on-click": "firefox --new-window https://chatgpt.com"
+    },
+    "custom/date": {
+        "exec": "date '+%a %d %b'",
+        "interval": 60,
+        "tooltip": false,
+	"on-click": "gnome-calendar"
+    },
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "tooltip-format": "{:%A, %B %d, %Y}",
+	"interval": 1
+    }
+
+}

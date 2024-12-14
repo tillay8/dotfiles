@@ -1,0 +1,50 @@
+
+* {
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+#waybar {
+    background-color: rgba(189, 189, 189, 0.80);
+    padding: 4px 10px;
+    margin: 5px;
+}
+
+#image.keylight,
+#image.volume,
+#image.vpn
+{
+    padding-right: 4px;
+    padding-left: 4px
+}
+#image.battery {
+    padding-right: 8px;
+}
+
+#image.wifi {
+padding-right: 8px;
+}
+#image.apple {
+    padding-left: 16px;
+    }
+#custom-date {
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 0px;
+}
+#window,
+#custom-File,
+#custom-Edit,
+#custom-View,
+#custom-Window,
+#custom-View {
+    padding-right: 6px;
+    padding-left: 6px
+}
+
+#clock {
+        font-weight: 400;
+        font-size: 14px;
+        padding-right: 8px;
+}
