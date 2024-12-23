@@ -9,3 +9,5 @@ running install.sh as a shell script basically moves these files into the config
 my waybar is designed to kinda look like the macos bar
 
 macos folder is a bunch of scripts, icon files, and wallpapers to make everything look nice
+
+![screenshot](https://raw.githubusercontent.com/tillay8/dotfiles/refs/heads/main/images/rice.png)
