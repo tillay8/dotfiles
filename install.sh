@@ -13,6 +13,9 @@ rm -rf ~/.config/waybar
 cp -r ./waybar ~/.config
 rm -rf ~/.config/Vencord
 cp -r ./Vencord ~/.config
+rm ~/.zshrc
+cp ./.zshrc ~/
+cp ./.aliases ~/
 killall -SIGUSR2 waybar
 nohup waybar & 
 nohup hyprpaper & 
