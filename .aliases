@@ -1,0 +1,21 @@
+alias shuffle='while true; do song=$(ls | shuf -n 1); echo -e "\033[1;33m$song"; mpv "$song"; done'
+alias ydl='yt-dlp $1 -x --no-playlist --audio-format mp3 -o "/home/$USER/Music/%(title)s.%(ext)s"'
+function vol {
+amixer -D pulse sset Master unmute > /dev/null
+amixer -D pulse sset Master $1% > /dev/null
+}
+function roll-mac {
+sudo ip link set dev wlan0 down
+sudo macchanger -r wlan0
+sudo ip link set dev wlan0 up
+}
+alias ccat='highlight -O ansi --force'
+function swap()
+{
+    touch $1 $2
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
+alias deb='mullvad-exclude ssh -p 440 -i ~/.ssh/deb_key tilley@192.168.3.32'
+
+alias swaptheme='swap /home/$USER/.config/macos/icons/THEME /home/$USER/.config/macos/icons/THEME2&&swap /home/$USER/.config/waybar/style.css /home/$USER/.config/waybar/style2.css&&killall -SIGUSR2 waybar'
