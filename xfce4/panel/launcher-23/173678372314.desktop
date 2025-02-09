@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Bloons TD 6
-Comment=Play this game on Steam
-Exec=steam steam://rungameid/960090
-Icon=steam_icon_960090
-Terminal=false
-Type=Application
-Categories=Game;
-X-XFCE-Source=file:///home/tilley/.local/share/applications/Bloons%20TD%206.desktop
