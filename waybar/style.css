@@ -2,11 +2,11 @@
 * {
     font-family: "SF Pro Display", sans-serif;
     font-size: 14px;
-    color: black;
+    color: white;
 }
 
 #waybar {
-    background-color: rgba(189, 189, 189, 0.80);
+    background-color: rgba(49, 49, 49, 0.80);
     padding: 4px 10px;
     margin: 5px;
 }
@@ -23,7 +23,7 @@
 }
 
 #image.wifi {
-padding-right: 8px;
+padding-right: 4px;
 }
 #image.apple {
     padding-left: 16px;
@@ -31,7 +31,7 @@ padding-right: 8px;
 #custom-date {
     font-weight: 400;
     font-size: 14px;
-    padding-right: 0px;
+    padding-left: 4px;
 }
 #window,
 #custom-File,

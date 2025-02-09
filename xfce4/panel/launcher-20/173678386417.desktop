@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Name=Mullvad Browser
+Comment=Mullvad Browser is +1 for privacy and −1 for mass surveillance
+Categories=Network;WebBrowser;Security;
+Exec=mullvad-browser %u
+Icon=mullvad-browser
+Terminal=false
+StartupNotify=true
+StartupWMClass=Mullvad Browser
+Actions=new-window;new-private-window;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
+GenericName=Web Browser
+Keywords=Internet;WWW;Browser;Web;Explorer
+X-XFCE-Source=file:///usr/share/applications/mullvad-browser.desktop
+
+[Desktop Action new-window]
+Exec=mullvad-browser --new-window %u
+Name=New Window
+Name[en_US]=New Window
+
+[Desktop Action new-private-window]
+Exec=mullvad-browser --private-window %u
+Name=New Private Window
+Name[en_US]=New Private Window

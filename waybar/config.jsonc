@@ -1,21 +1,20 @@
-{    "layer": "top",
-    "height": 30,
+{
+    "layer": "top",
+    "height": 34,
     "margin": 0,
     "spacing": 10,
     "modules-left": [
         "image#apple",
-        "hyprland/window",
-        "custom/File",
-        "custom/Edit",
-        "custom/View",
-        "custom/Window",
-        "custom/Help"
+	"hyprland/workspaces"
+    ],
+    "modules-center": [
+    "hyprland/window"
     ],
     "modules-right": [
+	"image#volume",
         "image#vpn",
         "image#keylight",
 	"image#bluetoth",
-        "image#volume",
         "battery",
         "image#battery",
         "image#wifi",
@@ -29,7 +28,7 @@
     "exec": "/home/$USER/.config/macos/scripts/apple.sh",
     "size": 18,
     "interval": 2,
-	"on-click": "/home/$USER/dropdown/dropdown --apple"
+	"on-click": "hyprlock"
     },
     "hyprland/window": {
         "format": "{class}",
@@ -38,26 +37,6 @@
             "^(?!.*\\S).*": "Desktop"
         }
     },
-    "custom/File": {
-    "format": "File",
-	"on-click": "thunar"
-    },
-    "custom/Edit": {
-        "format": "Edit",
-        "on-click": "kate"
-    },
-    "custom/View": {
-        "format": "View",
-        "on-click": "gimp"
-        },
-    "custom/Window": {
-        "format": "Window",
-        "on-click": "xfce4-appfinder"
-        },
-    "custom/Help": {
-        "format": "Help",
-        "on-click": "eos-welcome --once"
-        },
     "image#vpn": {
     "exec": "/home/$USER/.config/macos/scripts/vpn.sh",
     "size": 18,
@@ -96,13 +75,13 @@
         "exec": "/home/$USER/.config/macos/scripts/wifi.sh",
         "size": 18,
         "interval": 2,
-	"on-click": "nm-connection-editor"
+	"on-click": "alacritty -e nmtui"
     },
     "image#siri": {
     	"exec": "/home/$USER/.config/macos/scripts/siri.sh",
 	"size": 20,
 	"interval": 2,
-	"on-click": "firefox --new-window https://chatgpt.com"
+	"on-click": "firefox --new-window https://deepseek.com"
     },
     "custom/date": {
         "exec": "date '+%a %d %b'",

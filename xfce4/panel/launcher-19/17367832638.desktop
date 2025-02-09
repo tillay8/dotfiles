@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=eDEX-UI
+Exec=/usr/bin/edex-ui --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=edex-ui
+StartupWMClass=eDEX-UI
+X-AppImage-Version=2.2.8
+Comment=eDEX-UI sci-fi interface
+Categories=System;
+X-XFCE-Source=file:///usr/share/applications/edex-ui.desktop

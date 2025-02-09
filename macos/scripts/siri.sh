@@ -1,2 +1,1 @@
-THEME=$(head -n 1 /home/$USER/.config/macos/icons/THEME)
-echo "/home/$USER/.config/macos/icons/$THEME/misc/siri.png"
+echo "/home/$USER/.config/macos/icons/misc/siri.png"

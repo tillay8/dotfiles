@@ -1,16 +1,14 @@
 #!/bin/bash
-THEME=$(head -n 1 /home/$USER/.config/macos/icons/THEME)
-
 brightness=$(brightnessctl -d platform::kbd_backlight g)
 case "$brightness" in
     0)
-        filepath="/home/$USER/.config/macos/icons/$THEME/keylight/key0.png"
+        filepath="/home/$USER/.config/macos/icons/keylight/key0.png"
         ;;
     1)
-        filepath="/home/$USER/.config/macos/icons/$THEME/keylight/key1.png"
+        filepath="/home/$USER/.config/macos/icons/keylight/key1.png"
         ;;
     2)
-        filepath="/home/$USER/.config/macos/icons/$THEME/keylight/key2.png"
+        filepath="/home/$USER/.config/macos/icons/keylight/key2.png"
         ;;
     *)
         echo "Unknown brightness level: $brightness"
