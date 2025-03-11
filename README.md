@@ -1,13 +1,9 @@
-# Tilley's EndeavourOS Dotfiles :3
+# Tilley's Garuda Linux Dotfiles :3
 
-My dotfiles I use to start up a new installation of EndeavourOS 
-
-running start.sh as a shell script uses pacman to install all of my favorite packages
+My dotfiles I use to fix up a new installation of Garuda 
 
 running install.sh as a shell script basically moves these files into the config directory and reloads stuff
 
 my waybar is designed to kinda look like the macos bar
 
-macos folder is a bunch of scripts, icon files, and wallpapers to make everything look nice
-
-![screenshot](https://raw.githubusercontent.com/tillay8/dotfiles/refs/heads/main/images/rice.png)
+![image](https://github.com/user-attachments/assets/96966295-f482-4fa1-8905-7811ab2551e4)
