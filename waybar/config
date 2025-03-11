@@ -1,0 +1,267 @@
+[
+    {
+        "layer": "top", 
+        "position": "top",
+        "height": 40,
+        "margin": "0 0 0 0",
+        "spacing": 0,
+
+        "modules-left": ["custom/launcher", "image#media", "hyprland/workspaces", "hyprland/window"],
+        "modules-center": [],
+        "modules-right": ["custom/network_traffic", "backlight", "custom/keylight", "temperature", "cpu", "memory", "disk", "battery", "bluetooth", "pulseaudio", "image#vpn", "network", "custom/weather", "clock"],
+
+        "custom/launcher": {
+            "format": "    ",
+            "on-click": "exec wofi --normal-window --show drun --allow-images",
+            "tooltip": false
+        },
+        "image#media": {
+            "exec": "~/.config/waybar/scripts/media.sh",
+            "size": 24,
+            "on-click": "playerctl play-pause",
+            "on-click-right": "playerctl next",
+            "interval": 1
+        },
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "on-click": "activate",
+            "all-outputs": true,
+            "sort-by-number": true,
+            "format-icons": {
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10",
+                "focused": "",
+                "default": ""
+            },
+            "on-scroll-up": "hyprctl dispatch workspace e+1",
+            "on-scroll-down": "hyprctl dispatch workspace e-1"
+        },
+        "hyprland/window": {
+            "format": "",
+            "icon": true,
+            "icon-size": 20
+        },
+        "custom/network_traffic": {
+            "exec": "~/.config/waybar/scripts/network_traffic.sh",
+            "return-type": "json",
+            "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+            "tooltip-format": "network usage"
+        },
+        "backlight": {
+            "format": "{icon} {percent: >3}%",
+            "format-icons": ["", ""],
+            "on-scroll-down": "brightnessctl -c backlight set 1%-",
+            "on-scroll-up": "brightnessctl -c backlight set +1%",
+            "tooltip-format": "Screen brightness"
+        },
+        "custom/keylight": {
+            "exec": "~/.config/waybar/scripts/keylight.sh",
+            "on-click": "brightness=$(brightnessctl -d platform::kbd_backlight g); brightness=$(( (brightness + 1) % 3 )); brightnessctl -d platform::kbd_backlight s $brightness",
+            "interval": 1
+        },
+        "temperature": {
+            "thermal-zone": 7,
+            "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+            "critical-threshold": 80,
+            "format-critical": "{temperatureC}°C ",
+            "format": "{temperatureC}°C ",
+            "tooltip-format": "CPU Temperature"
+        },
+        "cpu": {
+            "format": " {usage}%",
+            "on-click": "gnome-system-monitor",
+            "tooltip-format": "CPU Usage"
+        },
+        "memory": {
+            "format": " {: >3}%",
+            "on-click": "foot -e htop",
+            "tooltip-format": "RAM Usage"
+        },
+        "disk": {
+            "interval": 30,
+            "format": "🖴 {specific_used:0.2f}",
+            "unit": "GB"
+        },
+        "battery": {
+            "states": {
+                "decent": 50,
+                "okay": 20,
+                "critical": 10
+            },
+            "format": "{icon} {capacity: >3}%",
+            "format-charging": " {capacity: >3}%",
+            "format-alt": "{time} {icon}",
+            "format-icons": ["", "", "", "", ""],
+            "tooltip-format": "Battery percentage"
+        },
+        "bluetooth": {
+            "format": " ok",
+            "format-disabled": " off",
+            "format-connected": " on",
+            "tooltip-format": "{controller_alias} - not connected",
+            "tooltip-format-connected": "{controller_alias}\n\n{device_alias}",
+            "on-click": "blueman-manager"
+        },
+        "pulseaudio": {
+            "scroll-step": 3,
+            "format": "{icon} {volume}% {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "",
+            "format-source-muted": "",
+            "format-icons": {
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol",
+            "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "image#vpn": {
+            "exec": "~/.config/waybar/scripts/vpn.sh",
+            "size": 18,
+            "interval": 1,
+            "on-click": "mullvad-vpn"
+        },
+        "network": {
+            "format": "⚠Disabled",
+            "format-wifi": "{essid} ({signalStrength}%)",
+            "format-ethernet": "",
+            "format-disconnected": "⚠Disabled",
+            "format-alt": "{ifname}: {ipaddr}/{cidr}",
+            "family": "ipv4",
+            "tooltip-format": "IP: {ipaddr}\nFreq: {frequency}MHz",
+            "on-click-right": "xfce4-terminal -e nmtui"
+        },
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            }
+        },
+        "custom/weather": {
+            "exec": "curl -s 'https://wttr.in/Boulder?format=3' | cut -c 10-",
+            "tooltip-format": "Weather in Boulder, CO",
+            "interval": 10
+        },
+        "clock": {
+            "tooltip-format": "Date and Time",
+            "format": " {:%a %d %b   %I:%M %p}",
+            "format-alt": " {:%d/%m/%Y   %H:%M:%S}",
+            "interval": 1
+        }
+
+    },
+    {
+        "layer": "top", 
+        "position": "bottom",
+        "height": 40,
+        "margin": "0 0 0 0",
+        "spacing": 0,
+
+        "modules-left": ["custom/launcher"],
+        "modules-center": ["custom/brave", "custom/firefox", "custom/librewolf", "custom/tor", "custom/codium", "custom/pc", "custom/kate", "custom/edex", "custom/gimp", "custom/obs", "custom/deluge", "custom/jtdx", "custom/thunar", "custom/boxes", "custom/gh"],
+        "modules-right": ["custom/suspend", "custom/lock", "custom/logout"],
+        "custom/launcher": {
+            "format": "    ",
+            "on-click": "exec wofi --normal-window --show drun --allow-images",
+            "tooltip": false
+        },
+        "custom/brave": {
+            "format": "    ",
+            "on-click": "brave",
+            "tooltip": false
+        },
+        "custom/librewolf": {
+            "format": "    ",
+            "on-click": "librewolf --private-window",
+            "tooltip": false
+        },
+        "custom/firefox": {
+            "format": "    ",
+            "on-click": "firefox",
+            "tooltip": false
+        },
+        "custom/codium": {
+            "format": "    ",
+            "on-click": "vscodium",
+            "tooltip": false
+        },
+        "custom/pc": {
+            "format": "    ",
+            "on-click": "pycharm",
+            "tooltip": false
+        },
+        "custom/gimp": {
+            "format": "    ",
+            "on-click": "gimp",
+            "tooltip": false
+        },
+        "custom/tor": {
+            "format": "    ",
+            "on-click": "torbrowser-launcher",
+            "tooltip": false
+        },
+        "custom/obs": {
+            "format": "    ",
+            "on-click": "obs",
+            "tooltip": false
+        },
+        "custom/edex": {
+            "format": "    ",
+            "on-click": "edex-ui > /dev/null",
+            "tooltip": false
+        },
+        "custom/deluge": {
+            "format": "    ",
+            "on-click": "deluge",
+            "tooltip": false
+        },
+        "custom/jtdx": {
+            "format": "    ",
+            "on-click": "jtdx",
+            "tooltip": false
+        },
+        "custom/thunar": {
+            "format": "    ",
+            "on-click": "thunar",
+            "tooltip": false
+        },
+        "custom/boxes": {
+            "format": "    ",
+            "on-click": "gnome-boxes",
+            "tooltip": false
+        },
+        "custom/gh": {
+            "format": "    ",
+            "on-click": "github-desktop",
+            "tooltip": false
+        },
+        "custom/kate": {
+            "format": "    ",
+            "on-click": "kate",
+            "tooltip": false
+        },
+        "custom/suspend": {
+            "format": "    ",
+            "on-click": "systemctl suspend",
+            "tooltip": false
+        },
+        "custom/lock": {
+            "format": "    ",
+            "on-click": "swaylock",
+            "tooltip": false
+        },
+        "custom/logout": {
+            "format": "    ",
+            "on-click": "hyprctl dispatch exit",
+            "tooltip": false
+        }
+    }
+]

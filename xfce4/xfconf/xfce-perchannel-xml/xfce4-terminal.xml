@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="xfce4-terminal" version="1.0">
+  <property name="scrolling-bar" type="string" value="TERMINAL_SCROLLBAR_NONE"/>
+  <property name="misc-cursor-shape" type="string" value="TERMINAL_CURSOR_SHAPE_IBEAM"/>
+  <property name="background-mode" type="string" value="TERMINAL_BACKGROUND_TRANSPARENT"/>
+  <property name="misc-borders-default" type="bool" value="false"/>
+  <property name="misc-menubar-default" type="bool" value="false"/>
+  <property name="color-foreground" type="string" value="#dcdcdc"/>
+  <property name="color-background" type="string" value="#000000000000"/>
+  <property name="color-background-vary" type="bool" value="false"/>
+  <property name="color-cursor-foreground" type="string" value=""/>
+  <property name="color-cursor" type="string" value="#dcdcdc"/>
+  <property name="color-cursor-use-default" type="bool" value="true"/>
+  <property name="color-selection" type="string" value=""/>
+  <property name="color-selection-background" type="string" value=""/>
+  <property name="color-selection-use-default" type="bool" value="true"/>
+  <property name="color-bold" type="string" value=""/>
+  <property name="color-bold-use-default" type="bool" value="true"/>
+  <property name="color-palette" type="string" value="rgb(0,0,0);rgb(255,85,85);rgb(80,250,123);rgb(241,250,140);rgb(189,147,249);rgb(255,121,198);rgb(139,233,253);rgb(191,191,191);rgb(77,77,77);rgb(255,110,103);rgb(90,247,142);rgb(244,249,157);rgb(202,169,250);rgb(255,146,208);rgb(154,237,254);rgb(230,230,230)"/>
+  <property name="color-bold-is-bright" type="bool" value="true"/>
+  <property name="color-use-theme" type="bool" value="false"/>
+  <property name="tab-activity-color" type="string" value="#aa0000"/>
+  <property name="background-darkness" type="double" value="0.47999999999999998"/>
+  <property name="misc-show-unsafe-paste-dialog" type="bool" value="false"/>
+  <property name="misc-bell" type="bool" value="true"/>
+  <property name="misc-bell-urgent" type="bool" value="true"/>
+  <property name="font-name" type="string" value="SourceCodeVF Medium 11"/>
+  <property name="misc-confirm-close" type="bool" value="false"/>
+</channel>

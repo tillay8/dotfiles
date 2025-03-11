@@ -1,50 +1,197 @@
-
 * {
-    font-family: "SF Pro Display", sans-serif;
-    font-size: 14px;
-    color: white;
+    color: #eceff4;
+    border: 0;
+    border-radius: 0;
+    padding: 0 0;
+    font-family:Symbols Nerd Font Mono;
+    font-size: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-bottom:2px;
+   }
+
+window#waybar {
+    background:rgba (0, 0, 0, 0.5);
+    border-radius: 20px 20px 20px 20px; 
 }
 
-#waybar {
-    background-color: rgba(49, 49, 49, 0.80);
-    padding: 4px 10px;
-    margin: 5px;
+#workspaces button.active {
+    border-color: #81a1c1;
 }
 
-#image.keylight,
-#image.volume,
-#image.vpn
-{
-    padding-right: 4px;
-    padding-left: 4px
-}
-#image.battery {
-    padding-right: 8px;
+#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keylight, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-network_traffic,#custom-weather,#custom-max_speed,#bluetooth,#disk, #image.vpn {
+    padding: 0 3px;
+    border-bottom: 2px;
+    border-style: solid;
 }
 
-#image.wifi {
-padding-right: 4px;
+#workspaces button {
+    padding: 2px 0px;
+    border-bottom: 2px;
+    color: #eceff4;
+    border-color: #d8dee9;
+    border-style: solid;
+    margin-top:2px;
 }
-#image.apple {
-    padding-left: 16px;
-    }
-#custom-date {
-    font-weight: 400;
-    font-size: 14px;
-    padding-left: 4px;
+
+#window {
+    border-style: hidden;
+    margin-top:1px;  
 }
-#window,
-#custom-File,
-#custom-Edit,
-#custom-View,
-#custom-Window,
-#custom-View {
-    padding-right: 6px;
-    padding-left: 6px
+
+#image.media {
+    padding-top: 4;
 }
+
+#custom-network_traffic{
+    color:#F60D94;
+}
+
+#backlight {
+    color: #ebcb8b;
+}
+
+#custom-keylight{
+    color:#cafdff;
+}
+
+#temperature {
+    color: #8fbcbb;
+}
+
+#temperature.critical {
+    color: #bf616a;
+}
+
+#cpu {
+    color:#a3be8c ;
+}
+
+#memory {
+    color: #d3869b;
+}
+
+#disk {
+    color:#64aaff ;
+}
+#battery {
+    color: #1bdb24;
+}
+
+#battery.decent:not(.charging) {
+    color: #8dff76;
+}
+
+#battery.okay:not(.charging) {
+    color: #ffe571;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff7a7a;
+}
+
+#battery.charging {
+    color: #95ff3e;
+}
+#bluetooth {
+    color:#c37ae0;
+}
+
+#pulseaudio {
+    color: #b48ead;
+}
+
+#pulseaudio.muted {
+    color: #3b4252;
+}
+
+#image.vpn {
+    color: #F1D701;
+}
+
+#network{
+    color:#8fff8f;
+}
+
+#network.disconnected {
+    color: #bf616a;
+}
+
+#network.disabled {
+    color:#bf616a;
+}
+
+#custom-weather{
+    color:#4cbdff;
+}   
 
 #clock {
-        font-weight: 400;
-        font-size: 14px;
-        padding-right: 8px;
+    color:#8a7ae0;
+}
+
+
+#custom-launcher, #custom-brave, #custom-librewolf, #custom-firefox, #custom-codium, #custom-pc, #custom-edex, #custom-gimp, #custom-tor, #custom-obs, #custom-deluge, #custom-jtdx, #custom-thunar, #custom-boxes, #custom-gh, #custom-kate, #custom-lock, #custom-logout, #custom-suspend {
+    font-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-style: hidden;
+}
+
+#custom-launcher {
+    background-image: url('/usr/share/icons/BeautyLine/actions/scalable/application-menu.svg');
+}
+#custom-brave{
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/brave.svg');
+}
+#custom-librewolf {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/librewolf.svg');
+}
+#custom-firefox {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/firefox-default.svg');
+}
+#custom-codium {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/visualstudiocode.svg');
+}
+#custom-pc {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/pycharm.svg');
+}
+#custom-gimp {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/geeqie.svg');
+}
+#custom-tor {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/tor.svg');
+}
+#custom-obs {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/obs.svg');
+}
+#custom-deluge {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/deluge.svg');
+}
+#custom-jtdx {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/pidgin.svg');
+}
+#custom-thunar {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/thunar.svg');
+}
+#custom-boxes {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/gnome-boxes.svg');
+}
+#custom-gh {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/github-desktop.svg');
+}
+#custom-kate {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/knowte.svg');
+}
+#custom-edex {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/epiphany.svg');
+}
+#custom-logout {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/system-log-out.svg');
+}
+#custom-lock {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/system-lock-screen.svg');
+}
+#custom-suspend {
+    background-image: url('/usr/share/icons/BeautyLine/apps/scalable/system-suspend.svg');
 }
